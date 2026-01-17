@@ -1,0 +1,69 @@
+body{
+    background-color: gray;
+}
+h1{
+    text-align: center;
+    color: lightgray;
+
+}
+
+.green-part{
+            width: 900px;
+            height: 600px;
+            background-color: #01411C;
+            position: relative;
+            transform: scale(0.5);       /* 👈 scales everything */
+            transform-origin: center;  /* prevents shifting */
+            margin-left: 65px;
+       }
+
+.white-part{
+        width: 200px;
+        height: 600px;
+        background-color: white;
+       }
+
+.moon {
+  width: 400px;
+  height: 400px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  margin-left: 360px;
+  position: absolute;
+  top: 100px
+
+}
+
+.white-part > .moon2 {
+  width: 350px;
+  height: 350px;
+  background-color: #01411C;
+  border-radius: 50%;
+  margin-left: 420px;
+  position: absolute;
+    top: 80px;
+    
+}
+
+.star {
+  position: absolute;
+  top: 160px;
+  left: 580px;
+  width: 120px;
+  height: 120px;
+  background-color: white;
+  transform: rotate(45deg);
+  clip-path: polygon(
+    50% 0%,
+    61% 35%,
+    98% 35%,
+    68% 57%,
+    79% 91%,
+    50% 70%,
+    21% 91%,
+    32% 57%,
+    2% 35%,
+    39% 35%
+  );
+}
+

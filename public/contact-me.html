@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Ahmed Saifullah</title>
+    <style>
+        /* Color Palette */
+        :root {
+            --orange: #FF8C42;
+            --green: #B5E48C;
+            --white: #F8F9FA;
+            --glass-bg: rgba(11, 34, 57, 0.7); /* Transparent navy for glass effect */
+        }
+
+        /* Your Space Background CSS */
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background: linear-gradient(to bottom, #0b0b2b, #1b2735 70%, #090a0f);
+            overflow-x: hidden; 
+            overflow-y: auto;
+            color: var(--white);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .stars {
+            width: 1px;
+            height: 1px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            background: white;
+            box-shadow: 2vw 5vh 2px white, 10vw 8vh 2px white, 15vw 15vh 1px white, 22vw 22vh 1px white, 28vw 12vh 2px white, 32vw 32vh 1px white, 38vw 18vh 2px white, 42vw 35vh 1px white, 48vw 25vh 2px white, 53vw 42vh 1px white, 58vw 15vh 2px white, 63vw 38vh 1px white, 68vw 28vh 2px white, 73vw 45vh 1px white, 78vw 32vh 2px white, 83vw 48vh 1px white, 88vw 20vh 2px white, 93vw 52vh 1px white, 98vw 35vh 2px white, 5vw 60vh 1px white, 12vw 65vh 2px white, 18vw 72vh 1px white, 25vw 78vh 2px white, 30vw 85vh 1px white, 35vw 68vh 2px white, 40vw 82vh 1px white, 45vw 92vh 2px white, 50vw 75vh 1px white, 55vw 88vh 2px white, 60vw 95vh 1px white, 65vw 72vh 2px white, 70vw 85vh 1px white, 75vw 78vh 2px white, 80vw 92vh 1px white, 85vw 82vh 2px white, 90vw 88vh 1px white, 95vw 75vh 2px white;
+            animation: twinkle 8s infinite linear;
+        }
+
+        .stars::after {
+            content: "";
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            background: white;
+            box-shadow: 8vw 12vh 2px white, 16vw 18vh 1px white, 24vw 25vh 2px white, 33vw 15vh 1px white, 41vw 28vh 2px white, 49vw 35vh 1px white, 57vw 22vh 2px white, 65vw 42vh 1px white, 73vw 28vh 2px white, 81vw 48vh 1px white, 89vw 32vh 2px white, 97vw 45vh 1px white, 3vw 68vh 2px white, 11vw 75vh 1px white, 19vw 82vh 2px white, 27vw 88vh 1px white, 35vw 72vh 2px white, 43vw 85vh 1px white, 51vw 92vh 2px white, 59vw 78vh 1px white;
+            animation: twinkle 6s infinite linear reverse;
+        }
+
+        .shooting-star {
+            position: fixed;
+            z-index: -1;
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, white, transparent);
+            animation: shoot 3s infinite ease-in;
+            left: -100px;
+        }
+
+        /* Randomize shooting stars */
+        .shooting-star:nth-child(1) { top: 10%; animation-delay: 0s; }
+        .shooting-star:nth-child(2) { top: 30%; animation-delay: 1.5s; }
+        .shooting-star:nth-child(3) { top: 50%; animation-delay: 3s; }
+        .shooting-star:nth-child(4) { top: 70%; animation-delay: 4.5s; }
+
+        @keyframes twinkle { 0%, 100% { opacity: 0.8; } 50% { opacity: 0.4; } }
+        @keyframes shoot { 0% { transform: translateX(0) translateY(0) rotate(25deg); opacity: 1; } 100% { transform: translateX(120vw) translateY(50vh) rotate(25deg); opacity: 0; } }
+
+        /* Contact Content Styling */
+        .container {
+            position: relative;
+            z-index: 10;
+            width: 90%;
+            max-width: 800px;
+            text-align: center;
+        }
+
+        .status-pill {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 20px;
+            background: rgba(181, 228, 140, 0.1);
+            border: 1px solid var(--green);
+            border-radius: 50px;
+            color: var(--green);
+            font-size: 0.8rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(5px);
+        }
+
+        h1 { font-size: clamp(2.5rem, 10vw, 4rem); margin-bottom: 1rem; }
+        .highlight { color: var(--orange); }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 2rem;
+        }
+
+        .contact-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(10px); /* Glassmorphism effect */
+            padding: 30px;
+            border-radius: 20px;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: 0.3s ease;
+            display: block;
+        }
+
+        .contact-card:hover {
+            border-color: var(--green);
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(181, 228, 140, 0.1);
+        }
+
+        .card-label { color: var(--orange); font-weight: bold; font-size: 0.8rem; text-transform: uppercase; display: block; margin-bottom: 10px; }
+        .card-value { color: var(--white); font-size: 1.1rem; }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="stars"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+    <div class="shooting-star"></div>
+
+    <div class="container">
+        <div class="status-pill">
+            Available for freelance projects
+        </div>
+
+        <h1>Reach out to <span class="highlight">ALT.</span></h1>
+        
+        <div class="contact-grid">
+            <a href="mailto:Alt.star217@gmail.com" class="contact-card">
+                <span class="card-label">Email Address</span>
+                <span class="card-value">Alt.star217@gmail.com</span>
+            </a>
+
+            <a href="https://instagram.com/ahmed._.saifullah217" target="_blank" class="contact-card">
+                <span class="card-label">Instagram</span>
+                <span class="card-value">@ahmed._.saifullah217</span>
+            </a>
+        </div>
+    </div>
+
+</body>
+</html>
